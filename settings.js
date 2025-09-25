@@ -3,7 +3,7 @@ const settings = {
   author: '‎',
   botName: "Lucky Tech Hub Bot",
   botOwner: 'Lucky 218', // Your name
-  ownerNumber: '256789101112', //Set your number here without + symbol, just add country code & number without any space
+  ownerNumber: process.env.OWNER_NUMBER || '', // Set your number in .env file without + symbol
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
   maxStoreMessages: 20, 
