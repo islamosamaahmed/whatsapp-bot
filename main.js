@@ -14,7 +14,7 @@ const { isAutotypingEnabled, handleAutotypingForMessage, showTypingAfterCommand 
 const { handleAutoread } = require('./commands/autoread');
 const { handleTicTacToeMove } = require('./commands/tictactoe');
 const { incrementMessageCount } = require('./commands/topmembers');
-const { handleAntilinkCommand, handleLinkDetection, Antilink } = require('./commands/antilink');
+const { handleAntilinkCommand, handleLinkDetection } = require('./commands/antilink');
 const { handleAntitagCommand, handleTagDetection } = require('./commands/antitag');
 const { handleBadwordDetection } = require('./lib/antibadword');
 const { handleChatbotResponse } = require('./commands/chatbot');
@@ -161,7 +161,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             if (isGroup) {
                 // Process non-command messages first
                 await handleChatbotResponse(sock, chatId, message, userMessage, senderId);
-                await Antilink(message, sock);
+                await handleLinkDetection(sock, chatId, message, userMessage, senderId);
                 await handleBadwordDetection(sock, chatId, message, userMessage, senderId);
                 await handleTagDetection(sock, chatId, message, senderId);
             }
@@ -235,14 +235,6 @@ async function handleMessages(sock, messageUpdate, printLog) {
         } else if (userMessage.startsWith('.')) {
             // Handle unknown commands
             // Optional: send a message for unknown commands
-        } else {
-            // Handle non-command messages
-            if (isGroup) {
-                await handleChatbotResponse(sock, chatId, message, userMessage, senderId);
-                await Antilink(message, sock);
-                await handleBadwordDetection(sock, chatId, message, userMessage, senderId);
-                await handleTagDetection(sock, chatId, message, senderId);
-            }
         }
 
         // Function to handle .groupgid command
