@@ -48,6 +48,7 @@ const channelInfo = {
 };
 
 async function handleMessages(sock, messageUpdate, printLog) {
+    let chatId; // Declare chatId outside the try block
     try {
         const { messages, type } = messageUpdate;
         if (type !== 'notify') return;
@@ -69,7 +70,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             return;
         }
 
-        const chatId = message.key.remoteJid;
+        chatId = message.key.remoteJid;
         const senderId = message.key.participant || message.key.remoteJid;
         const isGroup = chatId.endsWith('@g.us');
         const senderIsSudo = await isSudo(senderId);
@@ -244,13 +245,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             }
         }
 
-        // If a command was executed, show typing status after command execution
-        if (commandExecuted !== false) {
-            // Command was executed, now show typing status after command execution
-            await showTypingAfterCommand(sock, chatId);
-        }
-
-        // Function to handle .groupjid command
+        // Function to handle .groupgid command
         async function groupJidCommand(sock, chatId, message) {
             const groupJid = message.key.remoteJid;
 
@@ -272,10 +267,14 @@ async function handleMessages(sock, messageUpdate, printLog) {
             await addCommandReaction(sock, message);
         }
     } catch (error) {
-        console.error('❌ Error in message handler:', error.message);
+        console.error('❌ Error in message handler:', error);
+        // Try to get chatId from the message update if it exists, for robust error reporting
+        const message = messageUpdate?.messages?.[0];
+        const emergencyChatId = message?.key?.remoteJid;
+
         // Only try to send error message if we have a valid chatId
-        if (chatId) {
-            await sock.sendMessage(chatId, {
+        if (chatId || emergencyChatId) {
+            await sock.sendMessage(chatId || emergencyChatId, {
                 text: '❌ Failed to process command!',
                 ...channelInfo
             });
