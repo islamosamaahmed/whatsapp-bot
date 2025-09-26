@@ -77,7 +77,7 @@ const spotifyCommand = require('./commands/spotify');
 const songCommand = require('./commands/song');
 const videoCommand = require('./commands/video');
 const tiktokCommand = require('./commands/tiktok');
-const aiCommand = require('./commands/ai');
+// const aiCommand = require('./commands/ai');
 const { handleTranslateCommand } = require('./commands/translate');
 const { handleSsCommand } = require('./commands/ss');
 const { handleAreactCommand } = require('./lib/reactions');
@@ -233,8 +233,8 @@ const commands = {
   ytmp4: videoCommand,
   tiktok: tiktokCommand,
   tt: tiktokCommand,
-  gpt: aiCommand,
-  gemini: aiCommand,
+  // gpt: aiCommand,
+  // gemini: aiCommand,
   translate: (sock, chatId, message, userMessage) => handleTranslateCommand(sock, chatId, message, userMessage.slice(10)),
   trt: (sock, chatId, message, userMessage) => handleTranslateCommand(sock, chatId, message, userMessage.slice(4)),
   ss: (sock, chatId, message, userMessage) => handleSsCommand(sock, chatId, message, userMessage.slice(3).trim()),

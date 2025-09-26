@@ -208,11 +208,11 @@ async function startXeonBotInc() {
         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
         // Validate the phone number using awesome-phonenumber
-        const pn = require('awesome-phonenumber');
+        /* const pn = require('awesome-phonenumber');
         if (!pn('+' + phoneNumber).isValid()) {
             console.log(chalk.red('Invalid phone number. Please enter your full international number (e.g., 15551234567 for US, 447911123456 for UK, etc.) without + or spaces.'));
             process.exit(1);
-        }
+        } */
 
         setTimeout(async () => {
             try {
