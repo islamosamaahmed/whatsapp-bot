@@ -5,7 +5,7 @@ const path = require('path');
 async function helpCommand(sock, chatId, message) {
     const helpMessage = `
 ╔═══════════════════╗
-   *🤖 ${settings.botName || 'Lucky Tech Hub Bot'}*  
+   *🤖 ${settings.botName || 'FOXBOT V 2.5'}*
    Version: *${settings.version || '2.0.5'}*
    by ${settings.botOwner || 'Lucky 218'}
    YT : ${global.ytch}
@@ -228,7 +228,7 @@ Join our channel for updates:`;
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363420656466131@newsletter',
-                        newsletterName: 'Lucky Tech Hub Bot',
+                        newsletterName: 'FOXBOT V 2.5',
                         serverMessageId: -1
                     }
                 }
@@ -242,7 +242,7 @@ Join our channel for updates:`;
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363420656466131@newsletter',
-                        newsletterName: 'Lucky Tech Hub Bot by Lucky Tech Hub',
+                        newsletterName: 'FOXBOT V 2.5',
                         serverMessageId: -1
                     } 
                 }

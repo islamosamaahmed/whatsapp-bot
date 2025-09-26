@@ -1,5 +1,5 @@
 /**
- * Lucky Tech Hub Bot - A WhatsApp Bot
+ * FOXBOT V 2.5 - A WhatsApp Bot
  * Autotyping Command - Shows fake typing status
  */
 
@@ -29,7 +29,7 @@ async function autotypingCommand(sock, chatId, message) {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363420656466131@newsletter',
-                        newsletterName: 'Lucky Tech Hub Bot',
+                        newsletterName: 'FOXBOT V 2.5',
                         serverMessageId: -1
                     }
                 }
@@ -60,7 +60,7 @@ async function autotypingCommand(sock, chatId, message) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '120363420656466131@newsletter',
-                            newsletterName: 'Lucky Tech Hub Bot',
+                            newsletterName: 'FOXBOT V 2.5',
                             serverMessageId: -1
                         }
                     }
@@ -83,7 +83,7 @@ async function autotypingCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363420656466131@newsletter',
-                    newsletterName: 'Lucky Tech Hub Bot',
+                    newsletterName: 'FOXBOT V 2.5',
                     serverMessageId: -1
                 }
             }
@@ -98,7 +98,7 @@ async function autotypingCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363420656466131@newsletter',
-                    newsletterName: 'Lucky Tech Hub Bot',
+                    newsletterName: 'FOXBOT V 2.5',
                     serverMessageId: -1
                 }
             }

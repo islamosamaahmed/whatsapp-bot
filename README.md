@@ -10,7 +10,7 @@ This is a WhatsApp bot built using the Baileys library for group management, inc
 
 <div align="center"> 
   <a href="https://youtube.com/@luckytechhub-i9u"> 
-    <img src="https://github.com/luckytechhub/LuckyTechHub-Bot/blob/main/assets/bot_image.jpg" alt="Lucky Tech Hub Bot" height="300"> 
+    <img src="https://github.com/luckytechhub/LuckyTechHub-Bot/blob/main/assets/bot_image.jpg" alt="FOXBOT V 2.5" height="300">
   </a> 
 </div>
 
@@ -20,7 +20,7 @@ This is a WhatsApp bot built using the Baileys library for group management, inc
 
 ### Step 1: Fork the Repository
 
-Click the button below to fork the Lucky Tech Hub Bot repository to your GitHub account:
+Click the button below to fork the FOXBOT V 2.5 repository to your GitHub account:
 
 <div align="center">
   <a href="https://github.com/luckytechhub/LuckyTechHub-Bot/fork">
