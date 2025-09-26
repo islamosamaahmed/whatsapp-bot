@@ -39,6 +39,7 @@ const {
 const NodeCache = require("node-cache")
 // Using a lightweight persisted store instead of makeInMemoryStore (compat across versions)
 const pino = require("pino")
+const qrcode = require('qrcode-terminal')
 const readline = require("readline")
 const { parsePhoneNumber } = require("libphonenumber-js")
 const { PHONENUMBER_MCC } = require('@whiskeysockets/baileys/lib/Utils/generics')
@@ -97,7 +98,6 @@ async function startXeonBotInc() {
     const XeonBotInc = makeWASocket({
         version,
         logger: pino({ level: 'silent' }),
-        printQRInTerminal: !pairingCode,
         browser: ["Ubuntu", "Chrome", "20.0.04"],
         auth: {
             creds: state.creds,
@@ -229,7 +229,10 @@ async function startXeonBotInc() {
 
     // Connection handling
     XeonBotInc.ev.on('connection.update', async (s) => {
-        const { connection, lastDisconnect } = s
+        const { connection, lastDisconnect, qr } = s
+        if (qr) {
+            qrcode.generate(qr, { small: true })
+        }
         if (connection == "open") {
             console.log(chalk.magenta(` `))
             console.log(chalk.yellow(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2)))
