@@ -1,5 +1,5 @@
 /**
- * Lucky Tech Hub Bot - A WhatsApp Bot
+ * FOXBOT V 2.5 - A WhatsApp Bot
  * Copyright (c) 2025 Lucky 218
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -148,7 +148,7 @@ async function startXeonBotInc() {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363420656466131@newsletter',
-                                newsletterName: 'Lucky Tech Hub Bot',
+                                newsletterName: 'FOXBOT V 2.5',
                                 serverMessageId: -1
                             }
                         }
@@ -246,14 +246,14 @@ async function startXeonBotInc() {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363420656466131@newsletter',
-                        newsletterName: 'Lucky Tech Hub Bot',
+                        newsletterName: 'FOXBOT V 2.5',
                         serverMessageId: -1
                     }
                 }
             });
 
             await delay(1999)
-            console.log(chalk.yellow(`\n\n  ${chalk.bold.blue(`[ ${global.botname || 'Lucky Tech Hub Bot'} ]`)}\n\n`))
+            console.log(chalk.yellow(`\n\n  ${chalk.bold.blue(`[ ${global.botname || 'FOXBOT V 2.5'} ]`)}\n\n`))
             console.log(chalk.cyan(`< ================================================== >`))
             console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: LUCKY TECH HUB`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: luckytechhub`))
